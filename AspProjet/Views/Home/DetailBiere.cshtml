@@ -1,0 +1,108 @@
+﻿@model AspProjet.Models.BiereASP
+
+@{
+    ViewBag.Title = "DetailBiere";
+}
+
+<h2>DetailBiere</h2>
+<div>
+    <h4>BiereASP</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <!--<dt>
+            @Html.DisplayNameFor(model => model.biereId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.biereId)
+        </dd>-->
+
+        <dt>
+ @Html.DisplayNameFor(model => model.biereNom)
+        </dt>
+
+        <dd>
+
+            @Html.DisplayFor(model => model.biereNom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pourcentageAlcool)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pourcentageAlcool)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.biereImage)
+        </dt>
+
+        <dd>
+            <img class="img-thumbnail"  height="300" width="300" src="~/Images/@Model.biereImage" />
+           
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.biereDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.biereDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.biereRobe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.biereRobe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bierePrix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bierePrix)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomBrasserie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomBrasserie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.typeBiereNom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.typeBiereNom)
+        </dd>
+        @{
+            if (Model.recompenseNom != null)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.recompenseNom)
+                </dt>
+
+                <dd>
+                    @foreach (string item in Model.recompenseNom)
+                    {
+                        @Html.DisplayName(item)
+                        <br />
+                    }
+
+                </dd>
+            }
+        }
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Back to Biere", "Biere")
+</p>

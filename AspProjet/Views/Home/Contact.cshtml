@@ -1,0 +1,74 @@
+﻿@model IEnumerable<AspProjet.Models.ContactASP>
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+<h2>Contact</h2>
+
+
+@foreach(AspProjet.Models.ContactASP truc in Model)
+{
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayName("Nom Brasserie")
+            </dt>
+            <dd>
+                @Html.DisplayFor(modeltruc => truc.nomBrasserie)
+            </dd>
+            <dt>
+                @Html.DisplayName("Rue")
+            </dt>
+            <dd>
+                @Html.DisplayFor(modeltruc => truc.adRue)
+            </dd>
+            <dt>
+                @Html.DisplayName("Numéro")
+            </dt>
+            <dd>
+                @Html.DisplayFor(modeltruc => truc.adNumero)
+            </dd>
+            <dt>
+                @Html.DisplayName("Code Postal")
+            </dt>
+            <dd>
+                @Html.DisplayFor(modeltruc => truc.adCodePostal)
+            </dd>
+            <dt>
+                @Html.DisplayName("Localité")
+            </dt>
+            <dd>
+                @Html.DisplayFor(modeltruc => truc.adVille)
+            </dd>
+            <dt>
+                @Html.DisplayName("Email")
+
+            </dt>
+            <dd>
+                @Html.DisplayFor(modeltruc => truc.mailInfon)
+            </dd>
+            <dt>
+                @Html.DisplayName("téléphone")
+            </dt>
+            <dd>
+                @Html.DisplayFor(modeltruc => truc.telephone)
+            </dd>
+            @{
+                if (truc.adVille == "Charleroi" && truc.adRue.Contains("Mermoz") && truc.adNumero == "18")
+                {
+                    <dt>
+                        @Html.DisplayName("Plan d'accès")
+                    </dt>
+                    <dd>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.1320597075055!2d4.470546115732298!3d50.47588517947891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2292241c63e81%3A0x708d0046feef8fd6!2sAvenue%20Jean%20Mermoz%2018%2C%206041%20Charleroi!5e0!3m2!1sfr!2sbe!4v1585316329559!5m2!1sfr!2sbe" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </dd>
+                }
+
+            }
+
+        </dl>
+    </div>
+}
+
+           

@@ -1,0 +1,65 @@
+﻿@model AspProjet.Models.CommandeASP
+@using AspProjet.Tools
+@{
+    ViewBag.Title = "DetailCommande";
+}
+
+<h2>DetailCommande</h2>
+
+<div>
+    <h4>CommandeASP</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <!--<dt>
+            @Html.DisplayNameFor(model => model.commandeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.commandeId)
+        </dd>-->
+
+        <dt>
+            @Html.DisplayNameFor(model => model.commandeDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayName(Model.commandeDate.GetFrDate())
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.commandeQuantite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.commandeQuantite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientLogin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientLogin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.biereNom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.biereNom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bierePrix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bierePrix)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Commande")
+</p>

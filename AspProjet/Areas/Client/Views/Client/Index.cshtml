@@ -1,0 +1,66 @@
+﻿@model AspProjet.Models.ClientASP
+@using AspProjet.Tools
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h4>ClientASP</h4>
+    <hr />
+    <dl class="dl-horizontal">
+       <!-- <dt>
+            @Html.DisplayNameFor(model => model.clientId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientId)
+        </dd>-->
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientNom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientNom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientPrenom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientPrenom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientLogin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientLogin)
+        </dd>
+
+        <!--<dt>
+            @Html.DisplayNameFor(model => model.clientPwd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientPwd)
+        </dd>-->
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clienDateNaissance)
+        </dt>
+
+        <dd>
+            @Html.DisplayName(Model.clienDateNaissance.GetFrDate())
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditClient", new { id = Model.clientId })
+    @Html.ActionLink("Delete", "DeleteClient", new { id = Model.clientId })
+</p>

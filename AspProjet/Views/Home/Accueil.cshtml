@@ -1,0 +1,107 @@
+﻿@model AspProjet.Models.AccueilASP
+@using AspProjet.Tools
+@{
+    ViewBag.Title = "Accueil";
+}
+
+<h2>@Model.nomBrasserie</h2>
+
+@{
+    if (ViewBag.Messages!= null)
+    {
+        <div>
+            @Html.Label("Attention")
+            <dl>
+                @{
+                    foreach (AspProjet.Models.MessageASP item in ViewBag.Messages)
+                    {
+                        <dt>
+                            @Html.DisplayName("Date de début")
+                        </dt>
+                        <dd>
+                           
+                            @Html.Label(item.messageDateDebut.GetFrDate())
+                        </dd>
+                        <dt>
+                            @Html.DisplayName("Date de fin")
+                        </dt>
+                        <dd>
+                           
+                            @Html.Label(item.messageDateFin.GetFrDate())
+                        </dd>
+                        <dt>
+                            @Html.DisplayName("contenu")
+                        </dt>
+                        <dd>
+                            @Html.Label(item.messageContenu)
+                        </dd>
+
+                    }
+                }
+            </dl>
+
+        </div>
+    }
+
+}
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <!--<dt>
+            @Html.DisplayNameFor(model => model.brasserieId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brasserieId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomBrasserie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomBrasserie)
+        </dd>-->
+
+        <dt>
+            @Html.DisplayNameFor(model => model.brasseriePresentation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brasseriePresentation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horraireDateDebut)
+        </dt>
+
+        <dd>
+            @Html.DisplayName(Model.horraireDateDebut.GetFrDate())
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horraireDateFin)
+        </dt>
+
+        <dd>
+           @Html.DisplayName(Model.horraireDateFin.GetFrDate())
+
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.heureOuverture)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.heureOuverture.AfficherHeureMin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.heureFermeture)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.heureFermeture.AfficherHeureMin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+</p>

@@ -1,0 +1,74 @@
+﻿@model AspProjet.Models.OffreEmploiASP
+
+@{
+    ViewBag.Title = "DetailEmploi";
+}
+
+<h2>DetailEmploi</h2>
+
+<div>
+    <h4>OffreEmploiASP</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <!--<dt>
+            @Html.DisplayNameFor(model => model.offreEmploiId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offreEmploiId)
+        </dd>-->
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fonction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fonction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jobDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.diplomeMin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diplomeMin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.experienceMin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.experienceMin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomBrasserie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomBrasserie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mailRecrutement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mailRecrutement)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    
+    @Html.ActionLink("Back to Emploi", "Emploi")
+</p>

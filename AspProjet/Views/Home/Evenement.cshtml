@@ -1,0 +1,58 @@
+﻿@model IEnumerable<AspProjet.Models.EvenementASP>
+@using AspProjet.Tools
+@{
+    IFormatProvider culture4 = new System.Globalization.CultureInfo("fr-FR", true);
+    ViewBag.Title = "Evenement";
+}
+
+<h2>Evenement</h2>
+
+
+<table class="table">
+    <tr>
+        <!--<th>
+            @Html.DisplayNameFor(model => model.eventId)
+        </th>-->
+        <th>
+            @Html.DisplayNameFor(model => model.eventDateDebut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eventDateFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eventDescription)
+        </th>
+       <!-- <th>
+            @Html.DisplayNameFor(model => model.brasserieId)
+        </th>-->
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <!--<td>
+            
+            @Html.DisplayFor(modelItem => item.eventId)
+        </td>-->
+        <td>
+            @{
+                string[] july45 = item.eventDateDebut.GetDateTimeFormats(culture4);
+             }
+                @Html.DisplayName(item.eventDateDebut.GetFrDate())
+        </td>
+        <td>
+            @{
+                 july45 = item.eventDateFin.GetDateTimeFormats(culture4);
+            }
+            @Html.DisplayName(item.eventDateFin.GetFrDate())
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.eventDescription)
+        </td>
+        <!--<td>
+            @Html.DisplayFor(modelItem => item.brasserieId)
+        </td>-->
+    </tr>
+}
+
+</table>

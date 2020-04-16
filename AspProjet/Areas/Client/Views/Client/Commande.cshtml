@@ -1,0 +1,63 @@
+﻿@model IEnumerable<AspProjet.Models.CommandeASP>
+@using AspProjet.Tools
+@{
+    ViewBag.Title = "Commande";
+}
+
+<h2>Commande</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateCommande")
+</p>
+<table class="table">
+    <tr>
+        <!--<th>
+            @Html.DisplayNameFor(model => model.commandeId)
+        </th>-->
+        <th>
+            @Html.DisplayNameFor(model => model.commandeDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.commandeQuantite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.clientLogin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.biereNom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bierePrix)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <!--<td>
+            @Html.DisplayFor(modelItem => item.commandeId)
+        </td>-->
+        <td>
+           <!-- @Html.DisplayFor(modelItem => item.commandeDate)-->
+            @Html.DisplayName(item.commandeDate.GetFrDate())
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.commandeQuantite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.clientLogin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.biereNom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bierePrix)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "DetailCommande", new { id=item.commandeId }) 
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<AspProjet.Models.BiereASP>
+@using AspProjet.Tools
+@{
+    ViewBag.Title = "Biere";
+}
+
+<h2>Biere</h2>
+
+<p>
+</p>
+<table class="table">
+    <tr>
+        <!--<th>
+            @Html.DisplayNameFor(model => model.biereId)
+        </th>-->
+        <th>
+            @Html.DisplayNameFor(model => model.biereNom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pourcentageAlcool)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.biereImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.biereDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.biereRobe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bierePrix)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomBrasserie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.typeBiereNom)
+        </th>
+
+      <!--  <th>
+            @Html.DisplayNameFor(model => model.recompenseNom)
+        </th>-->
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <!--<td>
+        @Html.DisplayFor(modelItem => item.biereId)
+    </td>-->
+    <td>
+        @Html.DisplayFor(modelItem => item.biereNom)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.pourcentageAlcool)
+    </td>
+    <td>
+        <img  class="img-thumbnail" height="400" width="400" src="~/Images/@item.biereImage" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.biereDescription)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.biereRobe)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.bierePrix)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nomBrasserie)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.typeBiereNom)
+    </td>
+   <!-- @{
+        if (item.recompenseNom != null)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.recompenseNom)
+            </td>
+        }
+        else
+        {
+            <td>
+                @Html.DisplayName("Pas de récompense")
+            </td>
+        }
+    }-->
+
+    <td>
+        @Html.ActionLink("Details", "DetailBiere", new { id = item.biereId })
+    </td>
+</tr>
+}
+
+</table>
